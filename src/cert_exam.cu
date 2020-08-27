@@ -99,12 +99,12 @@ int main(const int argc, const char **argv)
   const float dt = 0.01f; // time step
   const int nIters = 10;  // simulation iterations
 
-  int bytes = nBodies * sizeof(Body);
-  float *buf;
+  int bytes = nBodies * sizeof(Body); //共24n字节空间
+  float *buf;// buf 是4字节的指针
 
   // buf = (float *)malloc(bytes);
   cudaMallocManaged(&buf, bytes);// CUDA malloc
-  Body *p = (Body *)buf;
+  Body *p = (Body *)buf; //p是24字节的指针
 
   size_t threadsPerBlock = BLOCK_SIZE;
   size_t numberOfBlocks = (nBodies + threadsPerBlock - 1) / threadsPerBlock;
