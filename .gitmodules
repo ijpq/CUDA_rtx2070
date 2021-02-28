@@ -1,3 +1,6 @@
 [submodule "15418"]
 	path = 15418
 	url = git@github.com:ijpq/15418.git
+[submodule "professional-cuda-c-programming"]
+	path = professional-cuda-c-programming
+	url = git@github.com:deeperlearning/professional-cuda-c-programming.git
